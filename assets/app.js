@@ -911,7 +911,7 @@ const CONFIG = {
     top.appendChild(tb);
     body.appendChild(top);
 
-    body.appendChild(el("div", "thread-count", `${win.thread.receipts.length + 2} replies`));
+    body.appendChild(el("div", "thread-count", `${3 + (win.logos && brandLogosByName(win.logos).length ? 1 : 0)} replies`));
     body.appendChild(threadReply("the play", win.thread.story));
 
     const rec = el("article", "msg thread-reply");
