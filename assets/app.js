@@ -529,7 +529,16 @@ const CONFIG = {
     img.src = CONFIG.brandBase + b.file;
     img.alt = b.name;
     img.loading = "lazy";
-    img.addEventListener("error", () => node.remove());
+    let triedRetry = false;
+    img.addEventListener("error", () => {
+      if (!triedRetry) {
+        triedRetry = true;
+        img.src = CONFIG.brandBase + b.file + (b.file.includes("?") ? "&" : "?") + "retry=" + Date.now();
+        return;
+      }
+      img.replaceWith(el("span", "brand-fallback", esc(b.name)));
+    });
+    img.src = CONFIG.brandBase + b.file;
     node.appendChild(img);
     return node;
   }
