@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NVWPM6T');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Leon Tang - ai native marketer, analytics junkie</title>
+  <meta name="description" content="Leon Tang portfolio. 10+ years in the digital marketing space with proven results. AI enthusiast, relentless experimentation." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVWPM6T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div id="edge-glow" aria-hidden="true"></div>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="nav-scrim"></div>
+  <div id="thread-scrim"></div>
+
+  <div id="workspace" class="workspace">
+    <aside class="sidebar">
+      <button class="ws-head" id="ws-head" aria-label="Workspace menu">
+        <span id="ws-name" class="ws-name">workspace</span>
+        <span class="ws-vibe" id="ws-vibe">🎧</span>
+      </button>
+      <div id="ws-menu" class="ws-menu" hidden></div>
+
+      <nav class="nav">
+        <div class="nav-section">Channels</div>
+        <div id="channel-list" class="channel-list"></div>
+
+        <div class="nav-section">Direct messages</div>
+        <button id="dm-row" class="channel dm">
+          <span class="dm-dot"></span>
+          <span class="cname">Direct message</span>
+          <span id="dm-unread" class="chan-unread dm-badge">1</span>
+        </button>
+      </nav>
+
+      <button class="me" id="me-profile" aria-label="Open Leon's profile">
+        <div id="me-avatar" class="avatar avatar-me"><span>LT</span><i class="me-online"></i></div>
+        <div class="me-info">
+          <div id="me-name" class="me-name">Name</div>
+          <div id="me-status" class="me-status">status</div>
+        </div>
+      </button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="burger" class="icon-btn burger" aria-label="Menu">&#9776;</button>
+        <div class="chan-heading" id="chan-heading">
+          <span class="chan-hash">#</span>
+          <span id="channel-title" class="chan-title">experience</span>
+          <span id="channel-topic" class="chan-topic"></span>
+        </div>
+        <div class="topbar-right">
+          <button id="mute" class="icon-btn" aria-label="Toggle sound">&#128276;</button>
+        </div>
+      </header>
+
+      <div id="feed-scroll" class="feed-scroll">
+        <div id="feed" class="feed"></div>
+      </div>
+
+      <div class="composer">
+        <div class="composer-box">
+          <input id="channel-input" class="composer-input" type="text"
+                 maxlength="280" autocomplete="off"
+                 placeholder="Message #experience" aria-label="Message" />
+          <button id="channel-send" class="send-btn" aria-label="Send"><span class="send-arrow">&#10148;</span></button>
+        </div>
+        <div id="composer-hint" class="composer-hint">you're a guest &mdash; say hi &#128064;</div>
+      </div>
+    </main>
+
+    <aside id="thread" class="thread">
+      <header class="thread-top">
+        <div class="thread-titles">
+          <div id="thread-title" class="thread-title">Thread</div>
+          <div id="thread-sub" class="thread-sub">how it happened</div>
+        </div>
+        <button id="thread-close" class="icon-btn" aria-label="Close">&#10005;</button>
+      </header>
+      <div id="thread-body" class="thread-body"></div>
+    </aside>
+  </div>
+
+  <!-- ================= CONTACT MODAL ================= -->
+  <div id="contact-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+      <button id="cm-close" class="icon-btn cm-close" aria-label="Close">&#10005;</button>
+      <div id="cm-form-view">
+        <div class="cm-head">
+          <div class="cm-av">LT</div>
+          <div class="cm-head-text">
+            <div id="cm-title" class="cm-title">Start a conversation</div>
+            <div class="cm-sub">this goes straight to leon@leontang.ca</div>
+          </div>
+        </div>
+        <div class="cm-field"><label for="cm-name">Your name</label><input id="cm-name" type="text" autocomplete="name" placeholder="Jordan Marketer" /></div>
+        <div class="cm-field"><label for="cm-email">Email</label><input id="cm-email" type="email" autocomplete="email" placeholder="you@company.com" /></div>
+        <div class="cm-field"><label for="cm-topic">What's this about?</label>
+          <select id="cm-topic">
+            <option>Web Analytics Implementation</option>
+            <option>Marketing Consulting Services</option>
+            <option>New Website Creation</option>
+            <option>Just saying hi</option>
+          </select>
+        </div>
+        <div class="cm-field"><label for="cm-message">Message</label><textarea id="cm-message" rows="4" placeholder="What are you trying to move?"></textarea></div>
+        <input type="text" id="cm-honey" class="cm-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div id="cm-error" class="cm-error"></div>
+        <button id="cm-submit" class="btn-primary cm-submit"><span class="cm-submit-label">Send message</span></button>
+      </div>
+      <div id="cm-success-view" class="cm-success" hidden>
+        <div class="cm-check"><svg viewBox="0 0 52 52"><circle class="cm-check-c" cx="26" cy="26" r="24" fill="none"/><path class="cm-check-p" fill="none" d="M14 27l8 8 16-16"/></svg></div>
+        <div class="cm-success-title">Message sent</div>
+        <div id="cm-success-text" class="cm-success-text"></div>
+        <button id="cm-done" class="btn-ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PROFILE OVERLAY ================= -->
+  <div id="profile-modal" class="modal-overlay" aria-hidden="true">
+    <div class="profile-card" role="dialog" aria-modal="true">
+      <button id="pf-close" class="icon-btn pf-close" aria-label="Close">&#10005;</button>
+      <div id="profile-body"></div>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
